@@ -5,6 +5,8 @@ Created on Thu Jun 02 15:25:11 2016
 @author: John Fuini
 """
 
+from Queue import Queue
+
 #traversal of binary trees
 
 class Node:
@@ -100,7 +102,20 @@ def post_order_traversal_iter(node):
 
 # finish this                
         
+def level_order_traversal(node):
+    if node == None:
+        return
+    queue = Queue()
+    queue.put(node)
+    while not queue.empty():
+        node = queue.get()
+        print node.value
+        if node.left != None:
+            queue.put(node.left)
+        if node.right != None:
+            queue.put(node.right)
         
+            
         
         
         
@@ -133,3 +148,5 @@ print "In-order Iterively:"
 in_order_traversal_iter(A)
 print "Post-order Iterively:"
 post_order_traversal_iter(A)
+print "Breadth First Traversal"
+level_order_traversal(A)
