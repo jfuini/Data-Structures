@@ -42,10 +42,13 @@ class linked_list(object):
         print("Printing Linked List")
         current_node = self.head    
         while current_node != None:
-            print(current_node.value)
+            print(current_node.value),
             current_node = current_node.next
             
     def del_node(self, value):
+        if self.head.value == value:
+            self.head = self.head.next
+            return value
         current_node = self.head
         previous_node = self.head
         while current_node != None:
@@ -75,12 +78,4 @@ a = Node(5)
 A = linked_list(a)
 A.add_from_list(entry_list)
 A.print_list()
-print("The size of this linked list is %s" % A.size())
-A.del_node(148)
-A.print_list()
-print("The size of this linked list is %s" % A.size())
-A.del_node(2)
-A.del_node(2)
-A.del_node(2)
-A.print_list()
-print("The size of this linked list is %s" % A.size())
+
