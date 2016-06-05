@@ -27,7 +27,7 @@ class Node:
         
 
       
-# Depth first traversals
+# Depth first traversals (recursive algorithms)
       
 def pre_order_traversal(node):
     if node == None:
@@ -50,7 +50,7 @@ def post_order_traversal(node):
     post_order_traversal(node.right)
     print(node.value)
     
-# Depth First Traversals interatively
+# Depth First Traversals (interative algorithm)
 def pre_order_traversal_iter(node):
     if node == None:
         return    
